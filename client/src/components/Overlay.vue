@@ -2,7 +2,7 @@
   <div class="fixed right-2 bottom-2">
     <div class="flex items-center space-x-4">
       <div>
-        <p>{{ inputText }}</p>
+        <p class="dark:text-white">{{ inputText }}</p>
       </div>
       <overlay-record-button />
     </div>
@@ -55,8 +55,8 @@ export default class Overlay extends Vue {
   private onAction(action: Action) {
     if (action.type === ActionType.Custom) {
       switch (action.command) {
-        case 'set-color': {
-          document.body.style.backgroundColor = action.value;
+        case 'set-theme': {
+          this.toggleDarkMode(action.value);
           break;
         }
         default:
@@ -77,6 +77,18 @@ export default class Overlay extends Vue {
   private onResponse(res: WebResponse) {
     if (res.context.request.asr?.text) {
       this.inputText = res.context.request.asr.text;
+    }
+  }
+
+  private toggleDarkMode(theme: 'dark' | 'light') {
+    if (theme === 'dark') {
+      if (!document.documentElement.classList.contains('mode-dark')) {
+        document.documentElement.classList.add('mode-dark');
+      }
+    } else if (theme === 'light') {
+      if (document.documentElement.classList.contains('mode-dark')) {
+        document.documentElement.classList.remove('mode-dark');
+      }
     }
   }
 }

@@ -35,31 +35,26 @@ app.setHandler({
     return this.toIntent('HelloWorldIntent');
   },
 
-  ColorIntent() {
-    const color = this.$inputs.color?.key;
+  SwitchThemeIntent() {
+    const theme = this.$inputs.theme?.key;
 
-    if (!color) {
-      return this.tell('I could not understand the color.');
+    if (theme !== 'dark' && theme !== 'light') {
+      return this.tell('You can switch to either light or dark mode by saying "switch to dark mode" or "switch to light mode".');
     }
 
     this.$webApp?.addActions([
       {
         type: ActionType.Custom,
-        command: 'set-color',
-        value: color,
+        command: 'set-theme',
+        value: theme,
       },
     ]);
-    return this.tell(`Alright, I am changing to ${color}.`);
+    return this.tell(`Alright, I am switching to ${theme} mode.`);
   },
 
-  HelloWorldIntent() {
-    this.ask("Hello World! What's your name?", 'Please tell me your name.');
-    this.$webApp?.showQuickReplies(['John', 'Eva', 'Max']);
-  },
-
-  MyNameIsIntent() {
-    this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-  },
+  Unhandled() {
+    return this.tell('You can switch to either light or dark mode by saying "switch to dark mode" or "switch to light mode.');
+  }
 });
 
 export { app };
