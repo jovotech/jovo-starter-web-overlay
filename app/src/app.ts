@@ -53,7 +53,7 @@ app.setHandler({
   },
 
   Unhandled() {
-    return this.tell('You can switch to either light or dark mode by saying "switch to dark mode" or "switch to light mode.');
+    return this.tell('You can switch to either light or dark mode by saying "switch to dark mode" or "switch to light mode."');
   }
 });
 
