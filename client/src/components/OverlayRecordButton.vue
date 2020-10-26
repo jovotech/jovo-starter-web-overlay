@@ -42,5 +42,3 @@ export default class OverlayRecordButton extends Vue {
   }
 }
 </script>
-
-<style scoped lang="scss"></style>
