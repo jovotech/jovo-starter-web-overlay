@@ -2,10 +2,7 @@ import { App } from 'jovo-framework';
 import { NlpjsNlu } from 'jovo-nlu-nlpjs';
 import { WebPlatform } from 'jovo-platform-web';
 import { ActionType } from 'jovo-platform-core';
-import { JovoDebugger } from 'jovo-plugin-debugger';
 import { FileDb } from 'jovo-db-filedb';
-import { LexSlu } from 'jovo-slu-lex';
-import { PollyTts } from 'jovo-tts-polly';
 
 // ------------------------------------------------------------------
 // APP INITIALIZATION
@@ -14,17 +11,12 @@ import { PollyTts } from 'jovo-tts-polly';
 const app = new App();
 
 const webPlatform = new WebPlatform();
-
-app.use(webPlatform, new JovoDebugger(), new FileDb());
-
 webPlatform.use(
   new NlpjsNlu(),
-  // new LexSlu({
-  //   botAlias: process.env.LEX_BOT_ALIAS,
-  //   botName: process.env.LEX_BOT_NAME,
-  // }),
-  // new PollyTts(),
 );
+
+app.use(webPlatform, new FileDb());
+
 
 // ------------------------------------------------------------------
 // APP LOGIC
@@ -32,7 +24,7 @@ webPlatform.use(
 
 app.setHandler({
   LAUNCH() {
-    return this.toIntent('HelloWorldIntent');
+    return this.tell('You can switch to either light or dark mode by saying "switch to dark mode" or "switch to light mode."');
   },
 
   SwitchThemeIntent() {
@@ -49,11 +41,11 @@ app.setHandler({
         value: theme,
       },
     ]);
-    return this.tell(`Alright, I am switching to ${theme} mode.`);
+    return this.tell(`OK, ${theme} mode.`);
   },
 
   Unhandled() {
-    return this.tell('You can switch to either light or dark mode by saying "switch to dark mode" or "switch to light mode."');
+    return this.toIntent('LAUNCH');
   }
 });
 
