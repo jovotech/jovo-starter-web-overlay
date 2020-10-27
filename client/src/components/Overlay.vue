@@ -2,7 +2,7 @@
   <div class="fixed right-2 bottom-2">
     <div class="flex items-center space-x-4">
       <div>
-        <p class="dark:text-white">{{ inputText }}</p>
+        <p class="text-gray-800 dark:text-gray-100">{{ inputText }}</p>
       </div>
       <overlay-record-button />
     </div>

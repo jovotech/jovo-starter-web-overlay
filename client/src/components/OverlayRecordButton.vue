@@ -1,23 +1,21 @@
 <template>
   <button
-    class="bg-gray-300 rounded-full p-8 focus:outline-none shadow-inset"
+    class="bg-gray-100 dark:bg-gray-800 rounded-full p-8 focus:outline-none shadow-2xl"
     @mousedown="onMouseDown"
     @touchstart="onMouseDown"
   >
-    <mic-icon :class="[$client.isRecordingInput ? 'text-red-600' : '']" />
+    <mic-icon class="text-gray-800 dark:text-gray-400" :class="[$client.isRecordingInput ? 'text-red-600' : '']" />
   </button>
 </template>
 
 <script lang="ts">
 import MicIcon from 'vue-feather-icons/icons/MicIcon';
-import PlayIcon from 'vue-feather-icons/icons/PlayIcon';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   name: 'overlay-record-button',
   components: {
     MicIcon,
-    PlayIcon,
   },
 })
 export default class OverlayRecordButton extends Vue {
