@@ -93,5 +93,3 @@ export default class Overlay extends Vue {
   }
 }
 </script>
-
-<style scoped lang="scss"></style>
