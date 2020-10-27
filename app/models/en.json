@@ -1,0 +1,36 @@
+{
+  "invocation": "my test app",
+  "intents": [
+    {
+      "name": "SwitchThemeIntent",
+      "phrases": [
+        "{theme}",
+        "switch to {theme} mode",
+        "{theme} mode",
+        "enable {theme} mode",
+        "{theme} theme",
+        "switch to the {theme} theme",
+        "I want the {theme} theme"
+      ],
+      "inputs": [
+        {
+          "name": "theme",
+          "type": "ThemeType"
+        }
+      ]
+    }
+  ],
+  "inputTypes": [
+    {
+      "name": "ThemeType",
+      "values": [
+        {
+          "value": "dark"
+        },
+        {
+          "value": "light"
+        }
+      ]
+    }
+  ]
+}
