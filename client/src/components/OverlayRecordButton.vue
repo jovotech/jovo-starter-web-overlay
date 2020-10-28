@@ -4,7 +4,7 @@
     @mousedown="onMouseDown"
     @touchstart="onMouseDown"
   >
-    <mic-icon class="text-gray-800 dark:text-gray-400" :class="[$client.isRecordingInput ? 'text-red-600' : '']" />
+    <mic-icon class="text-gray-800 dark:text-gray-400" :class="[$client.isRecordingInput ? 'text-red-600 dark:text-red-600' : '']" />
   </button>
 </template>
 
