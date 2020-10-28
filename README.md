@@ -8,7 +8,7 @@ This repository contains:
 
 ![Jovo Web Client to App](img/jovo-web-client-to-app.png)
 
-> Note: For demo purposes and the ease of getting started quickly, the template uses the [Web Speech API](https://wicg.github.io/speech-api/) as an ASR, which is not always accurate. For better performance you can integrate one of our integrations of several [cloud ASRs](https://www.jovo.tech/marketplace/tag/asr).
+> Note: For demo purposes and the ease of getting started quickly, the template uses the [Web Speech API](https://wicg.github.io/speech-api/) as an ASR, which is not always accurate. For better performance, you can integrate one of our integrations of several [cloud ASRs](https://www.jovo.tech/marketplace/tag/asr).
 
 ## Getting started
 
@@ -30,15 +30,15 @@ The starter was built for you to have a working example as well as an entry poin
 
 If you're familiar with the Vue.js project structure you should feel right at home. The starter is a very simple Vue app consisting of two components.
 
-For the styling we've used Tailwind CSS which is pretty much self documenting allowing to get started fairly quickly.
+For the styling, we've used Tailwind CSS which is pretty much self-documenting allowing you to get started fairly quickly.
 
 #### Component: Overlay
 
 The Overlay component handles the registration for multiple event listeners, namely `ClientEvent.Request`, `ClientEvent.Response`, and `ClientEvent.Action`.
 
 TODO: add links to docs and more info
-* `ClientEvent.Request`: triggered before the request is sent out to the Jovo app. In this case it is used to display the user's speech next to the microphone button.
-* `ClientEvent.Response`: triggered when the client receives the Jovo app's response. In this case it is used to display the app's response.
+* `ClientEvent.Request`: triggered before the request is sent out to the Jovo app. In this case, it is used to display the user's speech next to the microphone button.
+* `ClientEvent.Response`: triggered when the client receives the Jovo app's response. In this case, it is used to display the app's response.
 * `ClientEvent.Action`: triggered when the app's response contains an action. In our case we expect a `set-theme` action notifying us to switch the theme to either dark or light.
 
 Besides that, it implements the logic to switch from dark to light mode as a demo feature, which makes use of [Tailwind's custom variants](https://tailwindcss.com/docs/pseudo-class-variants#creating-custom-variants)
