@@ -20,7 +20,10 @@ module.exports = {
     },
     darkSelector: '.mode-dark'
   },
-  variants: ['dark'], // TODO: don't enable variant globally (increases file size)
+  variants: {
+    backgroundColor: ({ before }) => before(['dark']),
+    textColor: ({ before }) => before(['dark']),
+  },
   plugins: [
     plugin(function({addVariant, theme, e, prefix}) {
       const darkSelector = theme('darkSelector', '.mode-dark');
