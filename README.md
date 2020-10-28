@@ -8,7 +8,7 @@ This repository contains:
 
 ![Jovo Web Client to App](img/jovo-web-client-to-app.png)
 
-> Note: For demo purposes and the ease of getting started quickly, the template uses the [Web Speech API](https://wicg.github.io/speech-api/) as an ASR, which is not always accurate. For better performance, you can integrate one of our integrations of several [cloud ASRs](https://www.jovo.tech/marketplace/tag/asr).
+> Note: For demo purposes and the ease of getting started quickly, the template uses the [Web Speech API](https://wicg.github.io/speech-api/) as an ASR, which only works on Google Chrome. To use the Web integration on other browsers, you can integrate one of our integrations of several [cloud ASRs](https://www.jovo.tech/marketplace/tag/asr).
 
 ## Getting started
 
@@ -28,9 +28,7 @@ The starter was built for you to have a working example as well as an entry poin
 
 ### Client
 
-If you're familiar with the Vue.js project structure you should feel right at home. The starter is a very simple Vue app consisting of two components.
-
-For the styling, we've used Tailwind CSS which is pretty much self-documenting allowing you to get started fairly quickly.
+The client is a Vue.js project that consists of a single component "Overlay" which is styled in Tailwind CSS.
 
 #### Component: Overlay
 
