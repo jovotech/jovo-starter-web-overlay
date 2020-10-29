@@ -4,7 +4,8 @@
     <div v-else class="flex flex-col flex-grow justify-center items-center">
       <div class="px-8">
         <p class="text-lg text-center text-gray-800 dark:text-gray-400">
-          This demo uses the Chrome Web Speech API, which unfortunately isn't supported in this browser.
+          This demo uses the Chrome Web Speech API, which unfortunately isn't supported in this
+          browser.
         </p>
       </div>
     </div>
