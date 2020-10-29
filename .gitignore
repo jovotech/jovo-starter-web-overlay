@@ -4,7 +4,7 @@ dist
 
 
 # local env files
-.env
+client/.env
 .env.local
 .env.*.local
 
