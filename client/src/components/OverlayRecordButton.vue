@@ -3,7 +3,7 @@
     <button
       ref="recordButton"
       class="bg-gray-100 dark:bg-gray-800 rounded-full p-8 focus:outline-none shadow-2xl "
-      :class="[$client.isRecordingInput ? 'shadow-inner circle-ripple' : '']"
+      :class="[$client.isRecordingInput ? 'shadow-inner ripple' : '']"
       @mousedown="onMouseDown"
       @touchstart="onMouseDown"
     >
