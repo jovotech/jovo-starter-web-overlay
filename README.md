@@ -28,9 +28,9 @@ Demo: [jovo.tech/demos/starter-web-overlay](https://www.jovo.tech/demos/starter-
     $ npm i -g jovo-cli
 
     # This will download the template and install the dependencies
-    $ jovo new my-embeddedchat --template starter-web-embeddedchat
+    $ jovo new my-voice-overlay --template starter-web-embeddedchat
 
-    $ cd my-embeddedchat
+    $ cd my-my-voice-overlay
     ```
     Alternatively, you can clone this repository and run `npm install`.
 
