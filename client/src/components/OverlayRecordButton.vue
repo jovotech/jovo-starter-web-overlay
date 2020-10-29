@@ -3,7 +3,9 @@
     <button
       ref="recordButton"
       class="bg-gray-100 dark:bg-gray-800 rounded-full p-8 focus:outline-none shadow-2xl "
-      :class="[$client.isRecordingInput ? 'shadow-inner ripple' : '']"
+      :class="[
+        $client.isRecordingInput ? 'shadow-inner animate-ripple dark:animate-ripple-dark' : '',
+      ]"
       @mousedown="onMouseDown"
       @touchstart="onMouseDown"
     >
@@ -45,22 +47,3 @@ export default class OverlayRecordButton extends Vue {
   }
 }
 </script>
-<style lang="css">
-.ripple {
-  animation: ripple-animation 0.5s linear infinite;
-}
-@keyframes ripple-animation {
-  100% {
-    box-shadow: 0 0 0 0.6em rgba(67, 74, 101, 0.3),
-    0 0 0 0.35em rgba(67, 74, 101, 0.3),
-    0 0 0 0.125em rgba(67, 74, 101, 0.3),
-    0 0 0 0 rgba(67, 74, 101, 0.3);
-  }
-  0% {
-    box-shadow: 0 0 0 1em rgba(67, 74, 101, 0),
-    0 0 0 0.65em rgba(67, 74, 101, 0.3),
-    0 0 0 0.35em rgba(67, 74, 101, 0.3),
-    0 0 0 0.125em rgba(67, 74, 101, 0.3);
-  }
-}
-</style>
